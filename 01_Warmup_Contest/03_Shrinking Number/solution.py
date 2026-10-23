@@ -1,13 +1,13 @@
-taking_pos_int = int(input())
-
+n = int(input())
 count = 0
 
-if taking_pos_int < 10:
-    print(count)
-else:
-    while taking_pos_int > 10:
-        a = taking_pos_int // 10
-        b = taking_pos_int % 10
-        taking_pos_int = a * b
-        count += 1
-    print(count)
+while n >= 10:
+    product = 1
+
+    for digit in str(n):
+        product *= int(digit)
+
+    n = product
+    count += 1
+
+print(count)
