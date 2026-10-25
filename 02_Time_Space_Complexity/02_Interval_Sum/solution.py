@@ -1,12 +1,11 @@
 rounds = int(input())
 
-for _ in range(rounds+1):
-    L = int(input())
-    R = int(input())
+for _ in range(rounds):
+    L, R = map(int, input().split())
 
-    interval_sum = 0
+    sum_R = R * (R + 1) // 2
+    sum_L = (L - 1) * L // 2
 
-    for i in range(L, R + 1):
-        interval_sum += i
+    interval_sum = sum_R - sum_L
 
     print(interval_sum)
